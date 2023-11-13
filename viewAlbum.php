@@ -22,7 +22,7 @@
             <div class="image">
             <?php
             // Print photos
-            $photos = glob("$receivedValue/*.png");
+            $photos = glob("$receivedValue/*.jpg");
             $counter = 1;
             foreach($photos as $photo) {
                 echo '<span class="imageContainer"><img class="albumCover" src="' . $photo . '" width="25%" alt="Image"></span>';
