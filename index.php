@@ -1,3 +1,7 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
 <?php
 require 'header.html'; // Include the header
 
@@ -5,8 +9,11 @@ require 'header.html'; // Include the header
 ?>
 
 <div id="content">
-    <h2>Home Page</h2>
-    <p>Some amount of general home page stuff</p>
+    <h1>Home</h1>
+    <h2>Welcome</h2>
+    <p>If you have any questions you can contact me here: <br />
+    19ggallagher@gmail.com
+    </p>
 </div>
 
 </body>

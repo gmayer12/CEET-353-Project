@@ -1,3 +1,6 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
 <?php
 require 'header.html'; // Include the header
 
@@ -5,7 +8,7 @@ require 'header.html'; // Include the header
 ?>
 
 <div id="content">
-    <h2>Cart</h2>
+    <h1>Cart</h1>
     <p>Show current cart. Have purchase options</p>
 </div>
 
