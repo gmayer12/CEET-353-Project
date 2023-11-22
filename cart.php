@@ -7,6 +7,7 @@ require 'header.html'; // Include the header
 // Generic body content
 ?>
 
+<body id="cart">
 <div id="content">
     <div class="cart">
     <h1>Cart</h1>
