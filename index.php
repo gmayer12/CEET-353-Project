@@ -7,7 +7,7 @@ require 'header.html'; // Include the header
 
 // Generic body content
 ?>
-
+<body id="home_page">
 <div id="content">
     <h1>Home</h1>
     <div class="image">
