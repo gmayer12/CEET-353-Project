@@ -24,12 +24,17 @@ require 'header.html'; // Include the header
 					   "Customer email: ".$email."\n".
 					   "Customer comments:\n".strtoupper($feedback)."\n";
 
+		$fromaddress = "From: webserver@example.com" ."\r\n".
+						"Cc: 19ggallagher@gmail.com" ."\r\n".
+						"Reply-To: ggallag4@emich.edu";
+
 
 		//invoke mail() function to send mail
 		mail($toaddress, $subject, $mailcontent, $fromaddress);
 		?>
 
-    <h1>Form submitted</h1>
+    <h1>Feedback submitted</h1>
+    <p>Your feedback has been sent.</p>
 
 	</body>
 </html>
