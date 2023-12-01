@@ -80,3 +80,10 @@ h1 {
     max-height: 200px;
     overflow: hidden;
 }
+
+.scrollable-container {
+    height: 400px; /* Adjust the height as needed */
+    width: 60%;
+    overflow: auto;
+    border: 1px solid #ffffff; /* Optional: Add a border for better visibility */
+  }

@@ -15,14 +15,15 @@ require 'header.html'; // Include the header
         
         <p>Your current cart:</p>
 
-        
-        <script>
-            var element = document.getElementById("content");
-            var storedImages = JSON.parse(sessionStorage.getItem("images")) || [];
-            for(var image of storedImages) {
-                element.innerHTML += ' <div class="imageContainer"> <img class="albumCover" src="' + image + '" width="25%" alt="Image"> </div> '
-            }
-        </script>
+        <div class="scrollable-container" id="scroll_container">
+            <script>
+                var element = document.getElementById("scroll_container");
+                var storedImages = JSON.parse(sessionStorage.getItem("images")) || [];
+                for(var image of storedImages) {
+                    element.innerHTML += ' <div class="imageContainer"> <img class="albumCover" src="' + image + '" width="25%" alt="Image"> </div> '
+                }
+            </script>
+        </div>
         
 
         <div class="cart" id="cart_feedback">
