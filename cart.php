@@ -1,6 +1,7 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <?php
 require 'header.html'; // Include the header
@@ -10,37 +11,43 @@ require 'header.html'; // Include the header
 
 <body id="cart">
 <div id="content">
-    <h1>Cart</h1>
-    <div class="cart">
-        
-        <p>Your current cart:</p>
+    <h1>Cart</h1>        
+    <div id="subtotal">
+        <script>document.getElementById("subtotal").innerHTML = "<h2>Subtotal = $" + (getPrice() * getNumberItemsInCart()) + "</h2>"</script>
+    </div>
+    <div class="scrollable-container" id="scroll_container">
+        <?php
+            if(isset($_COOKIE['cartItems'])) {
+                try {
+                    // Get the cookie
+                    $cookieValue = $_COOKIE['cartItems'];
+                                        
+                    // Read the cookie into an array
+                    $myArray = json_decode($cookieValue, true);
 
-        <div class="scrollable-container" id="scroll_container">
-            <script>
-                var element = document.getElementById("scroll_container");
-                var storedImages = JSON.parse(sessionStorage.getItem("images")) || [];
-                for(var image of storedImages) {
-                    element.innerHTML += ' <div class="imageContainer"> <img class="albumCover" src="' + image + '" width="25%" alt="Image"> </div> '
+                    foreach($myArray as $image) {
+                        echo ' <div class="imageContainer"> <img class="albumCover" src="' . $image . '" width="25%" alt="Image" onclick="removeFromCart(\'' . $image . '\')"> </div> ';
+                    }
                 }
-            </script>
-        </div>
-        
-
-        <div class="cart" id="cart_feedback">
-            <form action="processorder.php" method="post">
-                <p><strong>Your name:</strong><br/>
-                <input type="text" name="name" size="40" /></p>
+                catch(error) {
+                    echo "Error while loading cart";
+                }
+                    
+            }
+            else {
+                //echo "Cart is empty";
+            }
                 
-                <p><strong>Your email address:</strong><br/>
-                <input type="text" name="email" size="40" /></p>
                 
-                <p><strong>Your feedback:</strong><br/>
-                <textarea name="feedback" rows="8" cols="40">
-                </textarea></p>
-                
-                <p><input type="submit" value="Send Order" /></p>  
-            </form>
-        </div>
+        ?>
+    </div>
+    <br>
+    <div class="pageButton" onclick="clearCart()">
+        <span class="pageButtonText">Clear Cart</span>
+    </div> 
+    <br>
+    <div class="pageButton" onclick="window.location.href='checkout.php'">
+        <span class="pageButtonText">Checkout</span>
     </div>
 </div>
 </body>

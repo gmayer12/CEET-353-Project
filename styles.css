@@ -12,7 +12,13 @@
     justify-content: center;
 }
 
-#cart_feedback {
+#checkout {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#checkout_feedback {
     text-align: center;
     margin-bottom: 0px;
     margin-top: 65px;
@@ -22,10 +28,30 @@
     justify-content: center;
 }
 
+.pageButton {
+    width: 100px;
+    height: 30px;
+    background-color: #555;
+    display: flex;
+    margin: auto;
+    margin-top: 15px;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px #111;
+    cursor: pointer;
+}
+
+.pageButton:hover {
+    background-color: #444;
+    border-radius: 15px;
+    transition: background-color 0.2s;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 0px;
-    margin-top: 65px;
 }
 
 .albumCover {
@@ -82,8 +108,11 @@ h1 {
 }
 
 .scrollable-container {
-    height: 400px; /* Adjust the height as needed */
-    width: 60%;
+    background-color: #00000088;
+    height: 500px; /* Adjust the height as needed */
+    width: 90%;
     overflow: auto;
-    border: 1px solid #ffffff; /* Optional: Add a border for better visibility */
-  }
+    border: 2px solid #ffffff;
+    margin: auto;
+    box-shadow: 3px 3px 3px 3px #111;
+}

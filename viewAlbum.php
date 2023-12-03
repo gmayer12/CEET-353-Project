@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <?php
@@ -34,20 +35,5 @@
             }
         ?>
     </div>
-
-    <script>
-        function addToCart(image) {
-            // Retrieve existing session array or create a new one
-            var storedImages = JSON.parse(sessionStorage.getItem("images")) || [];
-
-            // Add the new image path to the array
-            storedImages.push(image);
-
-            // Store the updated array back to session storage
-            sessionStorage.setItem("images", JSON.stringify(storedImages));
-
-            window.alert("Item saved!");
-        }
-    </script>
 </body>
 </html>
