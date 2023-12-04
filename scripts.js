@@ -1,4 +1,13 @@
 const price = 4.99;
+var total;
+
+function setTotal(tot) {
+    total = tot;
+}
+
+function getTotal() {
+    return total;
+}
 
 function getPrice() {
     return price;

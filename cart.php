@@ -13,7 +13,13 @@ require 'header.html'; // Include the header
 <div id="content">
     <h1>Cart</h1>        
     <div id="subtotal">
-        <script>document.getElementById("subtotal").innerHTML = "<h2>Subtotal = $" + (getPrice() * getNumberItemsInCart()) + "</h2>"</script>
+        <script>
+            var subtotal = getPrice() * getNumberItemsInCart();
+            setTotal(subtotal);
+            document.getElementById("subtotal").innerHTML = "<h2>Subtotal = $" + subtotal + "</h2>";
+            setCookie('subtotal', JSON.stringify(subtotal), 7);
+    
+        </script>
     </div>
     <div class="scrollable-container" id="scroll_container">
         <?php
