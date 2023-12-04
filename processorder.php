@@ -13,18 +13,19 @@ require 'header.html'; // Include the header
 		//create short variable names
 		$name=$_POST['name'];
 		$email=$_POST['email'];
-		$feedback=$_POST['feedback'];
+		$notes=$_POST['notes'];
 
 		//set up some static information
-		$toaddress = "19ggallagher@gmail.com";
+		$toaddress = "ggallag4@emich.edu";
 
-		$subject = "Feedback from web site";
+		$subject = "Order Request";
 
 		$mailcontent = "Customer name: ".$name."\n".
 					   "Customer email: ".$email."\n".
-					   "Customer comments:\n".strtoupper($feedback)."\n";
+					   "Photos: ".$cookieValue = $_COOKIE['cartItems'].
+					   "Customer notes: ".$notes."\n";
 
-		$fromaddress = "From: webserver@example.com" ."\r\n".
+		$fromaddress = "From: 19ggallagher@gmail.com" ."\r\n".
 						"Cc: 19ggallagher@gmail.com" ."\r\n".
 						"Reply-To: ggallag4@emich.edu";
 

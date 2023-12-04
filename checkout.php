@@ -16,8 +16,8 @@ require 'header.html'; // Include the header
             <p><strong>Your email address:</strong><br/>
             <input type="text" name="email" size="40" /></p>
                 
-            <p><strong>Your feedback:</strong><br/>
-            <textarea name="feedback" rows="8" cols="40">
+            <p><strong>Order notes:</strong><br/>
+            <textarea name="notes" rows="8" cols="40">
             </textarea></p>
                 
             <p><input type="submit" value="Send Order" /></p>  
