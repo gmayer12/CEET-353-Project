@@ -4,7 +4,6 @@
 <?php
 require 'header.html'; // Include the header
 
-// Generic body content
 ?>
 
 <div id="content">
@@ -22,7 +21,8 @@ require 'header.html'; // Include the header
 
 		$mailcontent = "Customer name: ".$name."\n".
 					   "Customer email: ".$email."\n".
-					   "Photos: ".$cookieValue = $_COOKIE['cartItems'].
+					   "Total: ".
+					   "Photos: ".$cookieValue = $_COOKIE['cartItems']."\n".
 					   "Customer notes: ".$notes."\n";
 
 		$fromaddress = "From: 19ggallagher@gmail.com" ."\r\n".
@@ -36,6 +36,15 @@ require 'header.html'; // Include the header
 
     <h1>Feedback submitted</h1>
     <p>Your feedback has been sent.</p>
+	<?php
+// Specify the file path and name
+$filePath = 'file.txt';
+
+
+file_put_contents($filePath, $mailcontent);
+
+echo "Text document created successfully at: $filePath";
+?>
 
 	</body>
 </html>
